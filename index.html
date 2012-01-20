@@ -12,7 +12,39 @@
 		width: 420px;
 		margin: 0 auto;
 	}
-		
+	.links {
+		float:left;
+		margin-bottom:20px;
+	}
+	.links li {
+		float:left;
+		list-style:none;
+	}
+	.links li:first-child {
+		margin-right:10px;
+	}
+	.links li a {
+		display:block;
+		text-decoration:none;
+		width:150px;
+		background:#333;
+		color:#eee;
+		padding:10px;
+		text-align:center;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		border:solid 1px #222;
+		-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,.5) ;
+		-moz-box-shadow: 2px 2px 5px rgba(0,0,0,.5) ;
+		box-shadow: 2px 2px 5px rgba(0,0,0,.5) ;
+	}
+	.links li a:hover {
+		background-color:#444;
+		-webkit-box-shadow: 0px 0px 1px rgba(0,0,0,.7) ;
+		-moz-box-shadow: 0px 0px 1px rgba(0,0,0,.7) ;
+		box-shadow: 0px 0px 1px rgba(0,0,0,.7) ;
+	}
 	.item p {
 		text-align: center;
 		font-size:11px;
@@ -221,6 +253,11 @@
 		<h2>iOS-esque popups using basic markup with class-based styling.</h2>
 		<p>(Just some CSS for the aesthetic, no implementation code.)</p>
 	</header>
+	<h3>Download</h3>
+	<ul class="links">
+		<li><a href="https://raw.github.com/ttscoff/popupsCSS/master/popups.css">CSS</a></li>
+		<li><a href="https://raw.github.com/ttscoff/popupsCSS/master/popups.min.css">Minified</a></li>
+	</ul>
 	<div id="demos">
 	<h3>Button boxes</h3>
 	<div class="item">
