@@ -4,7 +4,7 @@
 
 (Just some CSS for the aesthetic, no implementation code.)
 
-These styles were developed primarily with [Marked](http://markedapp.com) in mind, meaning there are no non-webkit vendor prefixes and they are not at all cross-browser tested. I'll put up a more complete version when I get a chance. If you take matters into your own hands, please fork on github or send me your updates for inclusion!
+These styles were developed primarily with [Marked](http://markedapp.com) in mind meaning they are not at all cross-browser tested. I'll put up a more complete version when I get a chance. If you take matters into your own hands, please fork on github or send me your updates for inclusion!
 
 ### Demo ###
 
