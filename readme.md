@@ -4,6 +4,10 @@
 
 (Just some CSS for the aesthetic, no implementation code.)
 
+### Demo ###
+
+Instructions and demo at <http://ttscoff.github.com/popupsCSS/>.
+
 ### Download
 
 * [CSS](https://raw.github.com/ttscoff/popupsCSS/master/popups.css)
