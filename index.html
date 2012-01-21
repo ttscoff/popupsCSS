@@ -12,26 +12,13 @@
 		width: 420px;
 		margin: 0 auto;
 	}
-  .center {
-    text-align:center;
-    clear:both;
-  }
-  a {
-    text-decoration:none;
-    color:rgba(79, 112, 115, 1);
-  }
-  a:hover {
-    border-bottom:solid 1px rgba(79, 112, 115, 1);
-  }
 	.links {
 		float:left;
-		margin:10px 0;
-		padding:0;
+		margin-bottom:20px;
 	}
 	.links li {
 		float:left;
 		list-style:none;
-		margin:0;
 	}
 	.links li:first-child {
 		margin-right:10px;
@@ -39,7 +26,7 @@
 	.links li a {
 		display:block;
 		text-decoration:none;
-		width:182px;
+		width:150px;
 		background:#333;
 		color:#eee;
 		padding:10px;
@@ -58,7 +45,7 @@
 		-moz-box-shadow: 0px 0px 1px rgba(0,0,0,.7) ;
 		box-shadow: 0px 0px 1px rgba(0,0,0,.7) ;
 	}
-	.item p {
+	.item>p {
 		text-align: center;
 		font-size:11px;
 		font-weight:bold;
@@ -113,37 +100,50 @@
 	#info { float:left;clear:both;width:500px;margin:0 auto;}
 	
 	/* popup styles */
+	
+	/* -----------------------------------------------------
+	  Primary box styling
+	----------------------------------------------------- */
+	
+	.popup, .arrow:after {
+	  background: rgba(0,0,0,.8);
+	}
+	
 	.popup {
 		position: relative;
 		width: 170px;
 		-webkit-border-radius: 7px;
 		-moz-border-radius: 7px;
 		border-radius: 7px;
-		padding: 5px 0;
+		padding: 0;
 		text-align: center;
 		text-indent: 0px;
 		color: #FFFFFF;
 		text-shadow: #5B5B5B 0px -1px 0px;
 		font: 14px/18px "Myriad Pro";
 		margin: 20px;
-	}
-
-	.popup ul {
-		list-style: none;
-		margin: 0;
-		padding: 5px 10px;
-
-		-webkit-border-radius: 7px;
-		-moz-border-radius: 7px;
-		border-radius: 7px;
-		background: rgba(0,0,0,.8);
-
 		-webkit-box-shadow: 2px 2px 3px rgba(0,0,0,.4);
 		-moz-box-shadow: 2px 2px 3px rgba(0,0,0,.4);
 		box-shadow: 2px 2px 3px rgba(0,0,0,.4);
 	}
+	.popup * {
+	  color: #fff !important;
+	}
+  .popup p {
+    display: block;
+    padding: 14px 10px;
+    font-size: 14px;
+  }
+	.popup ul {
+		list-style: none;
+		margin: 0;
+		padding: 4px 8px;
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+	}
 
-	.popup.north ul,.popup.south ul,.popup.east ul,.popup.west ul {
+	.popup.north,.popup.south,.popup.east,.popup.west {
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
@@ -154,18 +154,19 @@
 		border-top: solid 1px rgba(80,80,80,.4);
 		padding: 2px 0 0;
 		line-height: 1.6em;
-		text-align: center;
 	}
 
 	.popup li:first-child {
 		border-top: none;
+		margin-top: 0;
 	}
 
 	.popup li:last-child {
 		border-bottom: none;
+		margin-bottom: 6px;
 	}
 
-	.popup li a {
+	.popup a {
 		margin: 4px 0;
 		display: block;
 		text-decoration: none;
@@ -182,15 +183,14 @@
 		-webkit-box-shadow: 0px -0px 2px #222, inset 0px -2px 3px #616161;
 		-moz-box-shadow: 0px -0px 2px #222, inset 0px -2px 3px #616161;
 		box-shadow: 0px -0px 2px #222, inset 0px -2px 3px #616161;
-		text-align: center;
 		text-indent: 0px;
 		color: #FFFFFF;
 		text-shadow: #3C3C3C 0px -1px 0px;
 		line-height: 2em;
 
 	}
-
-	.popup li a:hover {
+	
+	.popup a:hover {
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.2, #4E4E4E), color-stop(1.0, #4A4A4A));
 
 		background: -webkit-linear-gradient(top, #4E4E4E 18.6%, #4A4A4A 100.0%);
@@ -198,66 +198,92 @@
 		background: linear-gradient(top, #4E4E4E 18.6%, #4A4A4A 100.0%);
 	}
 
-	.popup li a:active {
+	.popup a:active {
 		background: -webkit-linear-gradient(top, #3A3A3D 22.5%, #4A4A4A 100.0%);
 		background: -moz-linear-gradient(top, #3A3A3D 22.5%, #4A4A4A 100.0%);
 		background: linear-gradient(top, #3A3A3D 22.5%, #4A4A4A 100.0%);
 	}
-
+	
+	/* -----------------------------------------------------
+	  Arrows
+	----------------------------------------------------- */
+	
 	.arrow {
-		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAEJGlDQ1BJQ0MgUHJvZmlsZQAAeAGFVd9v21QUPolvUqQWPyBYR4eKxa9VU1u5GxqtxgZJk6XtShal6dgqJOQ6N4mpGwfb6baqT3uBNwb8AUDZAw9IPCENBmJ72fbAtElThyqqSUh76MQPISbtBVXhu3ZiJ1PEXPX6yznfOec7517bRD1fabWaGVWIlquunc8klZOnFpSeTYrSs9RLA9Sr6U4tkcvNEi7BFffO6+EdigjL7ZHu/k72I796i9zRiSJPwG4VHX0Z+AxRzNRrtksUvwf7+Gm3BtzzHPDTNgQCqwKXfZwSeNHHJz1OIT8JjtAq6xWtCLwGPLzYZi+3YV8DGMiT4VVuG7oiZpGzrZJhcs/hL49xtzH/Dy6bdfTsXYNY+5yluWO4D4neK/ZUvok/17X0HPBLsF+vuUlhfwX4j/rSfAJ4H1H0qZJ9dN7nR19frRTeBt4Fe9FwpwtN+2p1MXscGLHR9SXrmMgjONd1ZxKzpBeA71b4tNhj6JGoyFNp4GHgwUp9qplfmnFW5oTdy7NamcwCI49kv6fN5IAHgD+0rbyoBc3SOjczohbyS1drbq6pQdqumllRC/0ymTtej8gpbbuVwpQfyw66dqEZyxZKxtHpJn+tZnpnEdrYBbueF9qQn93S7HQGGHnYP7w6L+YGHNtd1FJitqPAR+hERCNOFi1i1alKO6RQnjKUxL1GNjwlMsiEhcPLYTEiT9ISbN15OY/jx4SMshe9LaJRpTvHr3C/ybFYP1PZAfwfYrPsMBtnE6SwN9ib7AhLwTrBDgUKcm06FSrTfSj187xPdVQWOk5Q8vxAfSiIUc7Z7xr6zY/+hpqwSyv0I0/QMTRb7RMgBxNodTfSPqdraz/sDjzKBrv4zu2+a2t0/HHzjd2Lbcc2sG7GtsL42K+xLfxtUgI7YHqKlqHK8HbCCXgjHT1cAdMlDetv4FnQ2lLasaOl6vmB0CMmwT/IPszSueHQqv6i/qluqF+oF9TfO2qEGTumJH0qfSv9KH0nfS/9TIp0Wboi/SRdlb6RLgU5u++9nyXYe69fYRPdil1o1WufNSdTTsp75BfllPy8/LI8G7AUuV8ek6fkvfDsCfbNDP0dvRh0CrNqTbV7LfEEGDQPJQadBtfGVMWEq3QWWdufk6ZSNsjG2PQjp3ZcnOWWing6noonSInvi0/Ex+IzAreevPhe+CawpgP1/pMTMDo64G0sTCXIM+KdOnFWRfQKdJvQzV1+Bt8OokmrdtY2yhVX2a+qrykJfMq4Ml3VR4cVzTQVz+UoNne4vcKLoyS+gyKO6EHe+75Fdt0Mbe5bRIf/wjvrVmhbqBN97RD1vxrahvBOfOYzoosH9bq94uejSOQGkVM6sN/7HelL4t10t9F4gPdVzydEOx83Gv+uNxo7XyL/FtFl8z9ZAHF4XM3iFgAAAP9JREFUWMPVmMEKxCAMREc/WO3Jn+/iXlwQa200VmYPgUClfUzSmAQpJcwYAAvAZD8CiNk3AOz0exUwNvsOQMrm6uevA1XKhALmZ0GjlAamVOaTTa3UbJhKZc4bP8xArYRZAqUJUwum9cyN5NSIMocQpnXmkColhfGDMK2zXgIlCdMsTA/qNnxPMIcSphe+JpS0Amtgeol+Cd/qnBmBapaEp+tgJUwPyhRiTNWZ18KHjcrIlNqsjEQpxOrWTput/GbkA2IMGVdS0/32dIVR0Lyfu2C4L9dFXaK6e+Rv0ChbWMomn3IMWjAo+tE5/z9HacplA+U6RqCU027RwLbS+wL9hzQMeP5okQAAAABJRU5ErkJggg==) no-repeat;
-		overflow: hidden;
-		position: absolute;
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-		filter: alpha(opacity=80);
-		opacity: .8;
-		display: none;
+	  overflow: hidden;
+	  position: absolute;
 	}
-		
-
+	.arrow:after {
+	  content: "";
+	  position: absolute;
+	  width: 27px;
+	  height: 28px;
+	  -webkit-transform: rotate(45deg);
+	  -moz-transform:    rotate(45deg);
+	  -ms-transform:     rotate(45deg);
+	  -o-transform:      rotate(45deg);
+	}
+	
 	.north .arrow,.south .arrow {
 		display: block;
-		width: 36px;
+		width: 28px;
 		height: 18px;
+		left: 50%;
+		margin-left: -18px;
 	}
+
+  .north .arrow {
+  	top: -18px;
+  	left: 50%;
+  	margin-left: -13px;*/
+  }
+
+	.north .arrow:after {
+	  top: 10px;
+	}
+	
+	.south .arrow {
+		bottom: -18px;
+	}
+
+  .south .arrow:after {
+    bottom: 10px;
+  }
 
 	.east .arrow,.west .arrow {
 		display: block;
 		width: 18px;
-		height: 36px;
-	}
-
-	.north .arrow {
-		background-position: center top;
-		top: -13px;
-		left: 50%;
-		margin-left: -18px;
+		height: 28px;
+		top: 55%;
 	}
 
 	.east .arrow {
-		background-position: right center;
-		top: 50%;
+		right: 13px;
 		margin-top: -18px;
 		right: -18px;
 	}
-
-	.south .arrow {
-		background-position: center bottom;
-		left: 50%;
-		margin-left: -18px;
-		bottom: -13px;
+	
+	.east .arrow:after {
+	  right: 10px;
 	}
 
 	.west .arrow {
-		background-position: left center;
-		top: 50%;
 		margin-top: -18px;
 		left: -18px;
 	}
+	
+	.west .arrow:after {
+	  left: 10px;
+	}
+	
+	/* -----------------------------------------------------
+	  Modifiers
+	----------------------------------------------------- */
 		
-	.left li,.left li a { text-align: left; text-indent:10px; }
-	.nodivider li { border: none !important;}
-	.compact li a { margin: 2px 0; }
+	.left, .left li,.left li a { text-align: left; text-indent:10px; }
+	.nodivider li { border: none !important; }
+	.compact li a { margin: 0; }
+	.compact.nodivider li a { margin: 2px 0 0; }
+	.compact ul { padding-top: 7px; }
 	</style>
 </head>
 <body>
@@ -274,147 +300,161 @@
 	</ul>
   <p class="center">By <a href="http://brettterpstra.com" title="">Brett Terpstra</a>. Feel free to fork this <a href="https://github.com/ttscoff/popupsCSS/" title="">on GitHub</a>.
 	<div id="demos">
-	<h3>Button boxes</h3>
-	<div class="item">
-		<p>left</p>
-		<div class="popup left">
-			<ul>
-				<li><a href="#">Option 1</a></li>
-				<li><a href="#">Option 2</a></li>
-				<li><a href="#">Option 3</a></li>
-			</ul>
-		</div>
-	</div>
-	
-		<div class="item">
-			<p>north compact nodivider</p>
-			<div class="popup north compact nodivider">
-				<ul>
-					<li><a href="#">Option 1</a></li>
-					<li><a href="#">Option 2</a></li>
-					<li><a href="#">Option 3</a></li>
-					<li><a href="#">Option 4</a></li>
-					<li><a href="#">Option 5</a></li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
-	
-		<div class="item">
-			<p>east nodivider</p>
-			<div class="popup east nodivider">
-				<ul>
-					<li><a href="#">Option 1</a></li>
-					<li><a href="#">Option 2</a></li>
-					<li><a href="#">Option 3</a></li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
-	
-		<div class="item">
-			<p>south compact</p>
-			<div class="popup south compact">
-				<ul>
-					<li><a href="#">Option 1</a></li>
-					<li><a href="#">Option 2</a></li>
-					<li><a href="#">Option 3</a></li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
-	
-		<div class="item">
-			<p>west</p>
-			<div class="popup west">
-				<ul>
-					<li><a href="#">Option 1</a></li>
-					<li><a href="#">Option 2</a></li>
-					<li><a href="#">Option 3</a></li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
-	
-	<h3>Status boxes</h3>
-	
-		<div class="item">
-			<p>left</p>
-			<div class="popup left">
-				<ul>
-					<li>100 words</li>
-					<li>15 lines</li>
-					<li>3,504 characters</li>
-					<li>1,000,000 smiles</li>
-					<li>4 turtle doves</li>
-					<li>1 you</li>
-				</ul>
-			</div>
-		</div>
-	
-		<div class="item">
-			<p>north</p>
-			<div class="popup north">
-				<ul>
-					<li>100 words</li>
-					<li>15 lines</li>
-					<li>3,504 characters</li>
-					<li>1,000,000 smiles</li>
-					<li>4 turtle doves</li>
-					<li>1 you</li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
-	
-		<div class="item">
-			<p>east</p>
-			<div class="popup east">
-				<ul>
-					<li>100 words</li>
-					<li>15 lines</li>
-					<li>3,504 characters</li>
-					<li>1,000,000 smiles</li>
-					<li>4 turtle doves</li>
-					<li>1 you</li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
-	
-		<div class="item">
-			<p>south</p>
-			<div class="popup south">
-				<ul>
-					<li>100 words</li>
-					<li>15 lines</li>
-					<li>3,504 characters</li>
-					<li>1,000,000 smiles</li>
-					<li>4 turtle doves</li>
-					<li>1 you</li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
-	
-		<div class="item">
-			<p>west nodivider</p>
-			<div class="popup west nodivider">
-				<ul>
-					<li>100 words</li>
-					<li>15 lines</li>
-					<li>3,504 characters</li>
-					<li>1,000,000 smiles</li>
-					<li>4 turtle doves</li>
-					<li>1 you</li>
-				</ul>
-				<span class="arrow"></span>
-			</div>
-		</div>
+	  <h3>Button boxes</h3>
+  	<div class="item">
+  		<p>left</p>
+  		<div class="popup left">
+  			<ul>
+  				<li><a href="#">Option 1</a></li>
+  				<li><a href="#">Option 2</a></li>
+  				<li><a href="#">Option 3</a></li>
+  			</ul>
+  		</div>
+  	</div>
+
+  		<div class="item">
+  			<p>north compact nodivider</p>
+  			<div class="popup north compact nodivider">
+  				<ul>
+  					<li><a href="#">Option 1</a></li>
+  					<li><a href="#">Option 2</a></li>
+  					<li><a href="#">Option 3</a></li>
+  					<li><a href="#">Option 4</a></li>
+  					<li><a href="#">Option 5</a></li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>east nodivider</p>
+  			<div class="popup east nodivider">
+  				<ul>
+  					<li><a href="#">Option 1</a></li>
+  					<li><a href="#">Option 2</a></li>
+  					<li><a href="#">Option 3</a></li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>south compact</p>
+  			<div class="popup south compact">
+  				<ul>
+  					<li><a href="#">Option 1</a></li>
+  					<li><a href="#">Option 2</a></li>
+  					<li><a href="#">Option 3</a></li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>west</p>
+  			<div class="popup west">
+  				<ul>
+  					<li><a href="#">Open Link</a></li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>west</p>
+  			<div class="popup">
+            <p><a href="#">Link in &lt;p&gt; tag</a></p>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  	<h3>Status boxes</h3>
+
+  		<div class="item">
+  			<p>left</p>
+  			<div class="popup left">
+  				<ul>
+  					<li>100 words</li>
+  					<li>15 lines</li>
+  					<li>3,504 characters</li>
+  					<li>1,000,000 smiles</li>
+  					<li>4 turtle doves</li>
+  					<li>1 you</li>
+  				</ul>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>north</p>
+  			<div class="popup north">
+  				<ul>
+  					<li>100 words</li>
+  					<li>15 lines</li>
+  					<li>3,504 characters</li>
+  					<li>1,000,000 smiles</li>
+  					<li>4 turtle doves</li>
+  					<li>1 you</li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>east</p>
+  			<div class="popup east">
+  				<ul>
+  					<li>100 words</li>
+  					<li>15 lines</li>
+  					<li>3,504 characters</li>
+  					<li>1,000,000 smiles</li>
+  					<li>4 turtle doves</li>
+  					<li>1 you</li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>south</p>
+  			<div class="popup south">
+  				<ul>
+  					<li>100 words</li>
+  					<li>15 lines</li>
+  					<li>3,504 characters</li>
+  					<li>1,000,000 smiles</li>
+  					<li>4 turtle doves</li>
+  					<li>1 you</li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>west nodivider</p>
+  			<div class="popup west nodivider">
+  				<ul>
+  					<li>100 words</li>
+  					<li>15 lines</li>
+  					<li>3,504 characters</li>
+  					<li>1,000,000 smiles</li>
+  					<li>4 turtle doves</li>
+  					<li>1 you</li>
+  				</ul>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
+
+  		<div class="item">
+  			<p>south</p>
+  			<div class="popup south">
+    			<p>This is in a paragraph tag</p>
+  				<span class="arrow"></span>
+  			</div>
+  		</div>
 	</div>
 	<div id="info">
 		<p>All popups use a div with a class of popup and an unordered list. For a button list, just make the list items links. Additional classes add arrows, remove dividers and justify text.</p>
-		<p>The arrows are created using a single PNG image (diamond shape with transparency) which is base64 encoded in the stylesheet.</p>
+		<p>The arrows are created using a span element with a class of 'arrow' before the end of the div container. The :after property is used to create a square element, rotate it 90&deg; and clip it into a triangle.</p>
 		<h3>Markup</h3>
 		
 		<h4>Option list</h4>
