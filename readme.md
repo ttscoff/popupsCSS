@@ -18,7 +18,7 @@ Instructions and demo at <http://ttscoff.github.com/popupsCSS/>.
 
 All popups use a div with a class of popup and an unordered list. For a button list, just make the list items links. Additional classes add arrows, remove dividers and justify text.
 
-The arrows are created using a single PNG image (diamond shape with transparency) which is base64 encoded in the stylesheet.
+The arrows are created using a span element with a class of 'arrow' before the end of the div container. The :after selector is used to create a square element, rotate it 90&deg; and clip it into a triangle.
 
 ### Markup
 
